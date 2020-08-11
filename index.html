@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="clock_area">
+            <div class="hours">
+                <div class="hours_reminder">
+                    <h1 id="hReminder">8</h1>
+                </div>
+                <h1 class="hours_text">hours</h1>
+            </div>
+
+            <div class="hours">
+                <div class="hours_reminder">
+                    <h1 id="mReminder">8</h1>
+                </div>
+                <h1 class="hours_text">Minutes</h1>
+            </div>
+
+            <div class="hours">
+                <div class="hours_reminder">
+                    <h1 id="sReminder">8</h1>
+                </div>
+                <h1 class="hours_text">Seconds</h1>
+            </div>
+
+            <div class="hours">
+                <div class="hours_reminder">
+                    <h1 id="session_PmOrAm">AM</h1>
+                </div>
+                <h1 class="hours_text">Session</h1>
+            </div>
+        </div>
+    </div>
+ <figure>
+     <img src="pexels-pixabay-462118.jpg" alt="">
+ </figure>
+    <script>
+        function upDate(){
+            let date = new Date();
+            let hours = date.getHours();
+            let Minutes = date.getMinutes();
+            let Seconds = date.getSeconds();
+            let session = hours<=12 ? 'pm' : 'am';
+
+            const newHours = document.getElementById('hReminder').innerText = hours;
+
+            const newMinutes = document.getElementById('mReminder').innerText = Minutes;
+
+            const newSeconds = document.getElementById('sReminder').innerText = Seconds;
+
+            const PmOrAm = document.getElementById('session_PmOrAm').innerText = session;
+
+            setTimeout(upDate, 500);
+        }
+        upDate();
+
+
+    </script>
+</body>
+</html>
